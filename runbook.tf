@@ -1,5 +1,5 @@
 resource "aws_ssm_document" "foo" {
-  name          = "FailoverRunbook-tf"
+  name          = "FailoverRunbook"
   document_type = "Automation"
   document_format = "YAML"
   attachments_source {

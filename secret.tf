@@ -31,7 +31,7 @@ resource "aws_secretsmanager_secret" "arc-cluster" {
 }
 
 resource "aws_secretsmanager_secret" "arc-control-1" {
-  name = "arc-control-1-terraform_1"
+  name = "arc-control1-terraform_1"
 
   replica {
     region = local.region2
@@ -39,7 +39,7 @@ resource "aws_secretsmanager_secret" "arc-control-1" {
 }
 
 resource "aws_secretsmanager_secret" "arc-control-2" {
-  name = "arc-control-2-terraform_1"
+  name = "arc-control2-terraform_1"
 
   replica {
     region = local.region2
