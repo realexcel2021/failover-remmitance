@@ -3,6 +3,8 @@
 
 **/node_modules/*
 
+venv
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
