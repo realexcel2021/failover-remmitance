@@ -20,11 +20,11 @@ import {createRemittance, deleteRemittance, updateRemittance} from "../../data";
 
 export const resourcesBreadcrumbs = [
   {
-    text: 'Remittance Processing',
+    text: 'Payment Record Processing',
     href: '/Remittances',
   },
   {
-    text: 'Delete Remittance',
+    text: 'Delete Payment Record',
     href: '/DeleteRemittance',
   },
 ];
@@ -132,12 +132,12 @@ export function FormHeader({ updateTools }) {
             <InfoLink
                 id="form-main-info-link"
                 onFollow={() => updateTools(0)}
-                ariaLabel={'Information about how to create a remittance.'}
+                ariaLabel={'Information about how to create a payment record.'}
             />
           }
-          description="Delete a remittance."
+          description="Delete a Payment Record."
       >
-        Delete remittance
+        Delete Payment Record
       </Header>
   );
 }
@@ -181,7 +181,7 @@ export function FormContent({ updateTools }) {
       receiverName===""?setReceiverNameError("You must specify the receiver's name."):setReceiverNameError("")
       receiverBank===""?setReceiverBankError("You must specify the receiver's bank name."):setReceiverBankError("")
       receiverAccount===""?setReceiverAccountError("You must specify the receiver's bank account."):setReceiverAccountError("")
-      amount===""?setAmountError("You must specify the remittance amount."):setAmountError("")
+      amount===""?setAmountError("You must specify the payment record amount."):setAmountError("")
 
       if (senderNameError==="" && senderBankError==="" && senderAccountError==="" && receiverNameError==="" && receiverBankError==="" && receiverAccountError==="" && amountError==="") {
 
@@ -209,7 +209,7 @@ export function FormContent({ updateTools }) {
                 <Button variant="link" onClick={onCancel}>
                   Cancel
                 </Button>
-                <Button onClick={onDeleteRemittance} variant="primary">Delete remittance</Button>
+                <Button onClick={onDeleteRemittance} variant="primary">Delete Payment record</Button>
               </SpaceBetween>
             }
             errorText={""}
@@ -219,7 +219,7 @@ export function FormContent({ updateTools }) {
             <Container
                 id="origin-panel"
                 className="custom-screenshot-hide"
-                header={<Header variant="h2">Remittance</Header>}
+                header={<Header variant="h2">Payments</Header>}
             >
               <div>
                 <Box margin={{ top: 's', bottom: 's' }} padding={{ top: 's', bottom: 's', horizontal: 'xl' }}>
@@ -378,7 +378,7 @@ export function FormContent({ updateTools }) {
                       disabled={true}
                       value={amount}
                       onChange={event => setAmount(event.detail.value)}
-                      onBlur={event => amount===""?setAmountError("You must specify the remittance amount."):setAmountError("")}
+                      onBlur={event => amount===""?setAmountError("You must specify the payment record amount."):setAmountError("")}
                   />
                 </FormField>
 

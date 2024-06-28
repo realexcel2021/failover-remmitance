@@ -20,11 +20,11 @@ import {createRemittance, updateRemittance} from "../../data";
 
 export const resourcesBreadcrumbs = [
   {
-    text: 'Remittance Processing',
+    text: 'Payments Processing',
     href: '/Remittances',
   },
   {
-    text: 'Update Remittance',
+    text: 'Update Payment Record',
     href: '/UpdateRemittance',
   },
 ];
@@ -35,14 +35,14 @@ export const Breadcrumbs = () => (
 
 export const ToolsContent =  [
   <HelpPanel
-      header={<h2>Remittance</h2>}
+      header={<h2>Payments</h2>}
       footer={
         <>
         </>
       }
   >
     <p>
-      Update a remittance.
+      Update a Payment.
     </p>
   </HelpPanel>,
   <HelpPanel

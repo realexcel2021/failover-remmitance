@@ -92,9 +92,9 @@ const VISIBLE_CONTENT_OPTIONS = [
 ];
 
 export const PAGE_SIZE_OPTIONS = [
-  { value: 10, label: '10 Remittances' },
-  { value: 30, label: '30 Remittances' },
-  { value: 50, label: '50 Remittances' },
+  { value: 10, label: '10 Payments' },
+  { value: 30, label: '30 Payments' },
+  { value: 50, label: '50 Payments' },
 ];
 
 export const DEFAULT_PREFERENCES = {

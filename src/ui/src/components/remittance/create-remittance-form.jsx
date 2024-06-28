@@ -20,11 +20,11 @@ import {createRemittance} from "../../data";
 
 export const resourcesBreadcrumbs = [
   {
-    text: 'Remittance Processing',
+    text: 'Payment Records Processing',
     href: '/Remittances',
   },
   {
-    text: 'Create Remittance',
+    text: 'Create Payment Record',
     href: '/CreateRemittance',
   },
 ];
@@ -35,14 +35,14 @@ export const Breadcrumbs = () => (
 
 export const ToolsContent =  [
   <HelpPanel
-      header={<h2>Tickets</h2>}
+      header={<h2>Payment Records</h2>}
       footer={
         <>
         </>
       }
   >
     <p>
-      Create a Ticket Remmitance.
+      Create a Payment Record.
     </p>
   </HelpPanel>,
   <HelpPanel
@@ -132,12 +132,12 @@ export function FormHeader({ updateTools }) {
             <InfoLink
                 id="form-main-info-link"
                 onFollow={() => updateTools(0)}
-                ariaLabel={'Information about how to create a remittance.'}
+                ariaLabel={'Information about how to create a Payment Record.'}
             />
           }
-          description="Create a remittance."
+          description="Create a Payment Record."
       >
-        Create remittance
+        Create Payment Record
       </Header>
   );
 }
@@ -176,7 +176,7 @@ export function FormContent({ updateTools }) {
       receiverName===""?setReceiverNameError("You must specify the receiver's name."):setReceiverNameError("")
       receiverBank===""?setReceiverBankError("You must specify the receiver's bank name."):setReceiverBankError("")
       receiverAccount===""?setReceiverAccountError("You must specify the receiver's bank account."):setReceiverAccountError("")
-      amount===""?setAmountError("You must specify the remittance amount."):setAmountError("")
+      amount===""?setAmountError("You must specify the payment record amount."):setAmountError("")
 
       if (senderNameError==="" && senderBankError==="" && senderAccountError==="" && receiverNameError==="" && receiverBankError==="" && receiverAccountError==="" && amountError==="") {
 
@@ -204,7 +204,7 @@ export function FormContent({ updateTools }) {
                 <Button variant="link" onClick={onCancel}>
                   Cancel
                 </Button>
-                <Button onClick={onCreateRemittance} variant="primary">Create remittance</Button>
+                <Button onClick={onCreateRemittance} variant="primary">Create Payment Record</Button>
               </SpaceBetween>
             }
             errorText={""}
@@ -214,7 +214,7 @@ export function FormContent({ updateTools }) {
             <Container
                 id="origin-panel"
                 className="custom-screenshot-hide"
-                header={<Header variant="h2">Remittance</Header>}
+                header={<Header variant="h2">Payment Records</Header>}
             >
               <div>
                 <Box margin={{ top: 's', bottom: 's' }} padding={{ top: 's', bottom: 's', horizontal: 'xl' }}>
@@ -366,7 +366,7 @@ export function FormContent({ updateTools }) {
                       type='number'
                       value={amount}
                       onChange={event => setAmount(event.detail.value)}
-                      onBlur={event => amount===""?setAmountError("You must specify the remittance amount."):setAmountError("")}
+                      onBlur={event => amount===""?setAmountError("You must specify the Payment amount."):setAmountError("")}
                   />
                 </FormField>
 

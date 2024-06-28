@@ -41,8 +41,8 @@ export const Breadcrumbs = () => (
 );
 
 export const FullPageHeader = ({
-                                 resourceName = 'Remittances',
-                                 createButtonText = 'Create remittance',
+                                 resourceName = 'Payments',
+                                 createButtonText = 'Create Payment Record',
                                  ...props
                                }) => {
   const isOnlyOneSelected = props.selectedItems.length === 1;
@@ -103,14 +103,14 @@ export const FullPageHeader = ({
 
 export const ToolsContent = () => (
     <HelpPanel
-        header={<h2>Remittances</h2>}
+        header={<h2>Payments</h2>}
         footer={
           <>
           </>
         }
     >
       <p>
-        View all your remittances.
+        View all your Payments.
       </p>
     </HelpPanel>
 );
@@ -134,7 +134,7 @@ function TableContent({updateTools }) {
     {
       propertyFiltering: {
         filteringProperties: FILTERING_PROPERTIES,
-        empty: <TableEmptyState resourceName="Remittances" />,
+        empty: <TableEmptyState resourceName="Payments" />,
         noMatch: (
             <TableNoMatchState
                 onClearFilter={() => {

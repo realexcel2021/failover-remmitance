@@ -87,7 +87,7 @@ export function LoginContent() {
                 <div className="text_white">
                   <SpaceBetween size="xl">
                     <Box variant="h1" fontWeight="bold" padding="n" fontSize="display-l" color="inherit">
-                      Cross Region Failover
+                      T360 Region Failover Application
                     </Box>
                     <Box variant="h3" fontWeight="bold">
                       <span className="text_white">

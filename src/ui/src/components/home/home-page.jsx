@@ -73,7 +73,7 @@ export function HomepageContent() {
                     </Box>
                     <Box variant="h3" fontWeight="bold">
                       <span className="text_white">
-                        This solution demonstrates how to failover a sample remittance application across AWS regions.
+                        This solution demonstrates how to failover a sample Payments Record application across AWS regions.
                       </span>
                     </Box>
                     <Box>

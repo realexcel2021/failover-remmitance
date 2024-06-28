@@ -48,14 +48,14 @@ export const Breadcrumbs = () => (
 
 export const ToolsContent = () => (
     <HelpPanel
-        header={<h2>Ticket Remittance</h2>}
+        header={<h2>Tickets</h2>}
         footer={
           <>
           </>
         }
     >
       <p>
-        View details of a Ticket remittance.
+        View details of a Ticket Payment.
       </p>
     </HelpPanel>
 );
