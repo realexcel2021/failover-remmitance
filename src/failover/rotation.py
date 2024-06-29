@@ -33,9 +33,9 @@ def get_regions(event, context):
     aws_region2 = event['AWS_REGION2']
 
     client = boto3.client('secretsmanager', region_name=aws_region)
-    cluster = client.get_secret_value(SecretId='arc-cluster-terraform_1')['SecretString']
-    control1 = client.get_secret_value(SecretId='arc-control1-terraform_1')['SecretString']
-    control2 = client.get_secret_value(SecretId='arc-control2-terraform_1')['SecretString']
+    cluster = client.get_secret_value(SecretId='arc-cluster-terraform_2')['SecretString']
+    control1 = client.get_secret_value(SecretId='arc-control1-terraform_2')['SecretString']
+    control2 = client.get_secret_value(SecretId='arc-control2-terraform_2')['SecretString']
 
 
     client = boto3.client('route53-recovery-control-config', region_name='us-west-2')
@@ -86,9 +86,9 @@ def rotate_arc_controls(event, context):
     aws_region = event['AWS_REGION']
 
     client = boto3.client('secretsmanager', region_name=aws_region)
-    cluster = client.get_secret_value(SecretId='arc-cluster-terraform_1')['SecretString']
-    control1 = client.get_secret_value(SecretId='arc-control1-terraform_1')['SecretString']
-    control2 = client.get_secret_value(SecretId='arc-control2-terraform_1')['SecretString']
+    cluster = client.get_secret_value(SecretId='arc-cluster-terraform_2')['SecretString']
+    control1 = client.get_secret_value(SecretId='arc-control1-terraform_2')['SecretString']
+    control2 = client.get_secret_value(SecretId='arc-control2-terraform_2')['SecretString']
 
     client = boto3.client('route53-recovery-control-config', region_name='us-west-2')
     cluster = client.describe_cluster(ClusterArn=cluster)
@@ -177,7 +177,7 @@ def update_database_secret(event, context):
     global_cluster_name = "remittance-project"
 
     client = boto3.client('secretsmanager', region_name=aws_region)
-    database_secret = client.get_secret_value(SecretId="database-terraform_secret")['SecretString']
+    database_secret = client.get_secret_value(SecretId="database-terraform_secret_qwq")['SecretString']
     database_secret_data = json.loads(database_secret)
 
     client = boto3.client('rds', region_name=aws_region)
@@ -201,7 +201,7 @@ def update_database_secret(event, context):
     # print(datetime.now().strftime("%m/%d/%Y, %H:%M:%S") + " database secret " + json.dumps(database_secret_data))
 
     client = boto3.client('secretsmanager', region_name="us-east-1")
-    client.put_secret_value(SecretId="database-terraform_secret", SecretString=json.dumps(database_secret_data))
+    client.put_secret_value(SecretId="database-terraform_secret_qwq", SecretString=json.dumps(database_secret_data))
 
     print(datetime.now().strftime("%m/%d/%Y, %H:%M:%S") + " updated database secret ")
 

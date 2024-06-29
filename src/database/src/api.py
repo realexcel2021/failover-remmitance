@@ -21,7 +21,7 @@ enable_logging()
 
 
 def get_secret():
-    secret_name = 'database-terraform_secret'
+    secret_name = 'database-terraform_secret_qwq'
     region_name = "us-east-1"
     secret = None
     # Create a Secrets Manager client

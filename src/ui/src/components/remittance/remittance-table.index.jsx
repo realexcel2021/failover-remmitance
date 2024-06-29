@@ -134,7 +134,7 @@ function TableContent({updateTools }) {
     {
       propertyFiltering: {
         filteringProperties: FILTERING_PROPERTIES,
-        empty: <TableEmptyState resourceName="Payments" />,
+        empty: <TableEmptyState resourceName="Payment" />,
         noMatch: (
             <TableNoMatchState
                 onClearFilter={() => {

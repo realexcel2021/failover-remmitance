@@ -14,7 +14,8 @@ locals {
 
 
 resource "aws_secretsmanager_secret" "db_pass" {
-  name = "database-terraform_secret"
+  name = "database-terraform_secret_qwq"
+  recovery_window_in_days = 0
 
   replica {
     region = local.region2
@@ -23,7 +24,8 @@ resource "aws_secretsmanager_secret" "db_pass" {
 }
 
 resource "aws_secretsmanager_secret" "arc-cluster" {
-  name = "arc-cluster-terraform_1"
+  name = "arc-cluster-terraform_2"
+  recovery_window_in_days = 0
 
   replica {
     region = local.region2
@@ -31,7 +33,8 @@ resource "aws_secretsmanager_secret" "arc-cluster" {
 }
 
 resource "aws_secretsmanager_secret" "arc-control-1" {
-  name = "arc-control1-terraform_1"
+  name = "arc-control1-terraform_2"
+  recovery_window_in_days = 0
 
   replica {
     region = local.region2
@@ -39,7 +42,9 @@ resource "aws_secretsmanager_secret" "arc-control-1" {
 }
 
 resource "aws_secretsmanager_secret" "arc-control-2" {
-  name = "arc-control2-terraform_1"
+  name = "arc-control2-terraform_2"
+  recovery_window_in_days = 0
+  
 
   replica {
     region = local.region2

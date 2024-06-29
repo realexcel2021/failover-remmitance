@@ -80,7 +80,7 @@ function RemittanceDetail (props: any) {
           <Container
               id="origin-panel"
               className="custom-screenshot-hide"
-              header={<Header variant="h2">Remittance</Header>}
+              header={<Header variant="h2">Tickets</Header>}
           >
             <SpaceBetween size="xl">
 
