@@ -33,9 +33,9 @@ def get_regions(event, context):
     aws_region2 = event['AWS_REGION2']
 
     client = boto3.client('secretsmanager', region_name=aws_region)
-    cluster = client.get_secret_value(SecretId='arc-cluster-terraform_2')['SecretString']
-    control1 = client.get_secret_value(SecretId='arc-control1-terraform_2')['SecretString']
-    control2 = client.get_secret_value(SecretId='arc-control2-terraform_2')['SecretString']
+    cluster = client.get_secret_value(SecretId='arc-cluster-terraform_2x')['SecretString']
+    control1 = client.get_secret_value(SecretId='arc-control1-terraform_2x')['SecretString']
+    control2 = client.get_secret_value(SecretId='arc-control2-terraform_2x')['SecretString']
 
 
     client = boto3.client('route53-recovery-control-config', region_name='us-west-2')
@@ -86,9 +86,9 @@ def rotate_arc_controls(event, context):
     aws_region = event['AWS_REGION']
 
     client = boto3.client('secretsmanager', region_name=aws_region)
-    cluster = client.get_secret_value(SecretId='arc-cluster-terraform_2')['SecretString']
-    control1 = client.get_secret_value(SecretId='arc-control1-terraform_2')['SecretString']
-    control2 = client.get_secret_value(SecretId='arc-control2-terraform_2')['SecretString']
+    cluster = client.get_secret_value(SecretId='arc-cluster-terraform_2x')['SecretString']
+    control1 = client.get_secret_value(SecretId='arc-control1-terraform_2x')['SecretString']
+    control2 = client.get_secret_value(SecretId='arc-control2-terraform_2x')['SecretString']
 
     client = boto3.client('route53-recovery-control-config', region_name='us-west-2')
     cluster = client.describe_cluster(ClusterArn=cluster)

@@ -24,7 +24,7 @@ resource "aws_secretsmanager_secret" "db_pass" {
 }
 
 resource "aws_secretsmanager_secret" "arc-cluster" {
-  name = "arc-cluster-terraform_2"
+  name = "arc-cluster-terraform_2x"
   recovery_window_in_days = 0
 
   replica {
@@ -33,7 +33,7 @@ resource "aws_secretsmanager_secret" "arc-cluster" {
 }
 
 resource "aws_secretsmanager_secret" "arc-control-1" {
-  name = "arc-control1-terraform_2"
+  name = "arc-control1-terraform_2x"
   recovery_window_in_days = 0
 
   replica {
@@ -42,7 +42,7 @@ resource "aws_secretsmanager_secret" "arc-control-1" {
 }
 
 resource "aws_secretsmanager_secret" "arc-control-2" {
-  name = "arc-control2-terraform_2"
+  name = "arc-control2-terraform_2x"
   recovery_window_in_days = 0
   
 
