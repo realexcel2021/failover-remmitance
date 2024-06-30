@@ -10,6 +10,8 @@ resource "aws_s3_bucket" "primary-frontend-bucket" {
 resource "aws_s3_bucket_ownership_controls" "example-primary" {
   bucket = aws_s3_bucket.primary-frontend-bucket.id
 
+
+
   rule {
     object_ownership = "ObjectWriter"
   }
@@ -17,6 +19,8 @@ resource "aws_s3_bucket_ownership_controls" "example-primary" {
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
   bucket = aws_s3_bucket.primary-frontend-bucket.id
+
+  depends_on = [ aws_s3_bucket_ownership_controls.example-primary ]
   policy = <<EOF
 {
     "Version": "2012-10-17",
@@ -108,6 +112,8 @@ resource "aws_s3_bucket_public_access_block" "example-secondary" {
 resource "aws_s3_bucket_policy" "allow_access_from_another_account2" {
   bucket = aws_s3_bucket.secondary-frontend-bucket.id
   provider = aws.region2
+  depends_on = [ aws_s3_bucket_ownership_controls.example-secondary ]
+
   policy = <<EOF
 {
     "Version": "2012-10-17",

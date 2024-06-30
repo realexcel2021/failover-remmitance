@@ -13,7 +13,7 @@ provider "aws" {
 locals {
   region1 = "us-east-1"
   region2 = "us-west-2"
-  name  = "remittance-project"
+  name  = "t360"
   domain = "devopslord.com"
   api_domain = "demo.devopslord.com"
   ui_domain = "demoui.devopslord.com" 
@@ -22,7 +22,7 @@ locals {
   azs                          = slice(data.aws_availability_zones.available.names, 0, 3)
   azs_secondary                = slice(data.aws_availability_zones.secondary.names, 0, 3) 
   tags = {
-    Project  = "remittance-project"
+    Project  = "t360"
   }
 
 }

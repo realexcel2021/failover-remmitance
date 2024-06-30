@@ -36,6 +36,8 @@ resource "aws_cognito_user_pool" "user_pool" {
   #     max_length = 256
   #   }
   # }
+
+  
 }
 
 resource "aws_cognito_user" "this" {

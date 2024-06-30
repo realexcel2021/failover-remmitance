@@ -132,7 +132,7 @@ def rotate_aurora_global_database(event, context):
     print(datetime.now().strftime("%m/%d/%Y, %H:%M:%S") + " rotate_aurora_global_database Invoked")
     aws_region = event['AWS_REGION']
 
-    global_cluster_name = "remittance-project"
+    global_cluster_name = "t360"
 
     client = boto3.client('rds', region_name=aws_region)
     response = client.describe_global_clusters(GlobalClusterIdentifier=global_cluster_name)
@@ -155,7 +155,7 @@ def wait_for_aurora_to_be_available(event, context):
     print(datetime.now().strftime("%m/%d/%Y, %H:%M:%S") + " wait_for_aurora_to_be_available Invoked")
     aws_region = event['AWS_REGION']
 
-    global_cluster_name = "remittance-project"
+    global_cluster_name = "t360"
 
     client = boto3.client('rds', region_name=aws_region)
     global_cluster_available = False
@@ -174,7 +174,7 @@ def update_database_secret(event, context):
     print(datetime.now().strftime("%m/%d/%Y, %H:%M:%S") + " update_database_secret Invoked")
     aws_region = event['AWS_REGION']
 
-    global_cluster_name = "remittance-project"
+    global_cluster_name = "t360"
 
     client = boto3.client('secretsmanager', region_name=aws_region)
     database_secret = client.get_secret_value(SecretId="database-terraform_secret_qwq")['SecretString']
